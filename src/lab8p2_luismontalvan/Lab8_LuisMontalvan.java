@@ -15,6 +15,8 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
      */
     public Lab8_LuisMontalvan() {
         initComponents();
+        jPUniverso.setVisible(false);
+        jPCrearSerVivo.setVisible(true);
     }
 
     /**
@@ -26,21 +28,196 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton6 = new javax.swing.JButton();
+        jPUniverso = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTFNombreUniverso = new javax.swing.JTextField();
+        jBtnCrearUniverso = new javax.swing.JButton();
+        jPCrearSerVivo = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jButton6.setText("jButton6");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Nombre del Universo");
+
+        jBtnCrearUniverso.setText("Crear Universo");
+
+        javax.swing.GroupLayout jPUniversoLayout = new javax.swing.GroupLayout(jPUniverso);
+        jPUniverso.setLayout(jPUniversoLayout);
+        jPUniversoLayout.setHorizontalGroup(
+            jPUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPUniversoLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTFNombreUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPUniversoLayout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
+                .addComponent(jBtnCrearUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(242, 242, 242))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPUniversoLayout.setVerticalGroup(
+            jPUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPUniversoLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTFNombreUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112)
+                .addComponent(jBtnCrearUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(202, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPUniverso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
+
+        jLabel2.setText("Nombre del Ser Vivo");
+
+        jLabel3.setText("ID");
+
+        jLabel4.setText("Poder");
+
+        jLabel5.setText("Años");
+
+        jLabel6.setText("Universo de Procedencia");
+
+        jLabel7.setText("Raza");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
+
+        jButton1.setText("Crear Ser Vivo");
+
+        javax.swing.GroupLayout jPCrearSerVivoLayout = new javax.swing.GroupLayout(jPCrearSerVivo);
+        jPCrearSerVivo.setLayout(jPCrearSerVivoLayout);
+        jPCrearSerVivoLayout.setHorizontalGroup(
+            jPCrearSerVivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPCrearSerVivoLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPCrearSerVivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField1)
+                    .addComponent(jTextField2)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jLabel6)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox2, 0, 245, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
+        );
+        jPCrearSerVivoLayout.setVerticalGroup(
+            jPCrearSerVivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPCrearSerVivoLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addGroup(jPCrearSerVivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPCrearSerVivoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6))
+                    .addGroup(jPCrearSerVivoLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPCrearSerVivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 480));
+
+        jMenu1.setText("Universo");
+
+        jMenuItem1.setText("Crear Universo");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Modificar Universo");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Eliminar Universo");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Listar Universos");
+        jMenu1.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Ser Vivo");
+
+        jMenuItem5.setText("Crear Ser Vivo");
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Modificar Ser Vivo");
+        jMenu2.add(jMenuItem6);
+
+        jMenuItem7.setText("Eliminar Ser Vivo");
+        jMenu2.add(jMenuItem7);
+
+        jMenuItem8.setText("Listar Ser Vivo");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +255,35 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnCrearUniverso;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JPanel jPCrearSerVivo;
+    private javax.swing.JPanel jPUniverso;
+    private javax.swing.JTextField jTFNombreUniverso;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
