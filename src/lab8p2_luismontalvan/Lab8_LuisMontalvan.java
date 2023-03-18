@@ -4,7 +4,12 @@
  */
 package lab8p2_luismontalvan;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,17 +42,17 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
         jBtnCrearUniverso = new javax.swing.JButton();
         jPCrearSerVivo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTFNombreSV = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTFID = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTFPoder = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jTFAños = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCBProcedencia = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jCBRaza = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -69,6 +74,11 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
         jLabel1.setText("Nombre del Universo");
 
         jBtnCrearUniverso.setText("Crear Universo");
+        jBtnCrearUniverso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnCrearUniversoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPUniversoLayout = new javax.swing.GroupLayout(jPUniverso);
         jPUniverso.setLayout(jPUniversoLayout);
@@ -101,6 +111,12 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre del Ser Vivo");
 
+        jTFNombreSV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFNombreSVActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("ID");
 
         jLabel4.setText("Poder");
@@ -111,7 +127,7 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
 
         jLabel7.setText("Raza");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
+        jCBRaza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
 
         jButton1.setText("Crear Ser Vivo");
 
@@ -126,14 +142,14 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
+                    .addComponent(jTFNombreSV)
+                    .addComponent(jTFID)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4)
+                    .addComponent(jTFPoder)
+                    .addComponent(jTFAños)
                     .addComponent(jLabel6)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, 0, 245, Short.MAX_VALUE))
+                    .addComponent(jCBProcedencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCBRaza, 0, 245, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
@@ -144,11 +160,11 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFNombreSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPCrearSerVivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPCrearSerVivoLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -157,19 +173,19 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFPoder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFAños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)))
                 .addGap(5, 5, 5)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCBProcedencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCBRaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
@@ -178,6 +194,11 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
         jMenu1.setText("Universo");
 
         jMenuItem1.setText("Crear Universo");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Modificar Universo");
@@ -194,6 +215,11 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
         jMenu2.setText("Ser Vivo");
 
         jMenuItem5.setText("Crear Ser Vivo");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setText("Modificar Ser Vivo");
@@ -220,6 +246,55 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        jPUniverso.setVisible(true);
+        jPCrearSerVivo.setVisible(false);
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        if (universos.size() != 0) {
+            jPUniverso.setVisible(false);
+            jPCrearSerVivo.setVisible(true);
+            
+            try {
+                int id = Integer.valueOf(jTFID.getText());
+                String nombre = jTFNombreSV.getText();
+                String universo = String.valueOf(jCBProcedencia.getSelectedItem());
+                int años = Integer.valueOf(jTFAños.getText());
+                int poder = Integer.valueOf(jTFPoder.getText());
+                String raza = String.valueOf(jCBRaza.getSelectedItem());
+                
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            
+
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jTFNombreSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreSVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFNombreSVActionPerformed
+
+    private void jBtnCrearUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCrearUniversoMouseClicked
+        // TODO add your handling code here:
+        jPUniverso.setVisible(true);
+        jPCrearSerVivo.setVisible(false);
+        universos.add(new Universo(jTFNombreUniverso.getText(), 0));
+        DUniverso agregar;
+        try {
+            agregar = new DUniverso();
+            agregar.escribirDocumento(universos.get(universos.size()-1));
+        } catch (IOException ex) {
+            Logger.getLogger(Lab8_LuisMontalvan.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_jBtnCrearUniversoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -260,8 +335,8 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JButton jBtnCrearUniverso;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jCBProcedencia;
+    private javax.swing.JComboBox<String> jCBRaza;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -282,11 +357,11 @@ public class Lab8_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPCrearSerVivo;
     private javax.swing.JPanel jPUniverso;
+    private javax.swing.JTextField jTFAños;
+    private javax.swing.JTextField jTFID;
+    private javax.swing.JTextField jTFNombreSV;
     private javax.swing.JTextField jTFNombreUniverso;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTFPoder;
     // End of variables declaration//GEN-END:variables
     ArrayList<Universo> universos = new ArrayList();
 }

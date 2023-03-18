@@ -5,12 +5,13 @@
 package lab8p2_luismontalvan;
 
 import java.util.ArrayList;
-
+import java.io.Serializable;
 /**
  *
  * @author luism
  */
-public class Universo {
+public class Universo implements Serializable{
+    
     private String nombre;
     private int cantidad;
     ArrayList<SerVivo> seresVivos = new ArrayList();
